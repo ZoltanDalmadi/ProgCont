@@ -7,16 +7,16 @@ public class Matrix {
     int N = s.nextInt();
     int M = s.nextInt();
 
-    double[][] mat = new double[N][M];
+    int[][] mat = new int[N][M];
 
-    // fill matrix
     for (int row = 0; row < N; row++) {
       for (int col = 0; col < M; col++) {
-        mat[row][col] = s.nextDouble();
+        mat[row][col] = s.nextInt();
       }
     }
 
-    // calculate averages of columns
+    s.close();
+
     double averages[] = new double[M];
 
     for (int col = 0; col < M; col++) {
@@ -29,19 +29,18 @@ public class Matrix {
       averages[i] /= (double) N;
     }
 
-    // print columns that contain average value
     StringBuilder sb = new StringBuilder();
 
     for (int col = 0; col < M; col++) {
       for (int row = 0; row < N; row++) {
         if (mat[row][col] == averages[col]) {
           sb.append(col + 1).append(" ");
+          break;
         }
       }
     }
 
-    sb.deleteCharAt(sb.length() - 1);
-    System.out.println(sb.toString());
+    System.out.println(sb.toString().trim());
   }
 
 }
