@@ -1,7 +1,7 @@
 # ProgCont
 You can build the examples with Apache Ant.
 
-build all at once, call ant from root directory:
+To build all at once, call ant from root directory:
 
     $ ant
 
