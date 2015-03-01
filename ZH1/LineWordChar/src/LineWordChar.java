@@ -6,7 +6,8 @@ public class LineWordChar {
   public static void main(String[] args) {
 
     Scanner s = new Scanner(System.in);
-    String toSearch = s.next();
+    String toSearch = s.nextLine();
+
     ArrayList<String> lines = new ArrayList<>();
 
     while (s.hasNext()) {
@@ -20,14 +21,13 @@ public class LineWordChar {
     for (String line : lines) {
       if (line.contains(toSearch)) {
         contains++;
-        allChars += line.length();
-
         String[] words = line.split(" ");
         allWords += words.length;
+        allChars += line.length();
       }
     }
 
-    System.out.println(String.valueOf(contains) + " " + allWords + " " + allChars);
+    System.out.printf("%d %d %d\n", contains, allWords, allChars);
 
   }
 
