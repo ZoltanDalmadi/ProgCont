@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="ProgCont" default="all">
+
+    <target name="all">
+        <ant dir="Matrix"/>
+        <ant dir="SoundingDistance"/>
+        <ant dir="WorkersAndSalaries"/>
+    </target>
+
+    <target name="clean">
+        <ant dir="Matrix" target="clean"/>
+        <ant dir="SoundingDistance" target="clean"/>
+        <ant dir="WorkersAndSalaries" target="clean"/>
+    </target>
+
+    <target name="jar">
+        <ant dir="Matrix" target="jar"/>
+        <ant dir="SoundingDistance" target="jar"/>
+        <ant dir="WorkersAndSalaries" target="jar"/>
+    </target>
+
+</project>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="ProgCont" default="all">
+
+    <target name="all">
+        <ant dir="FinancialStatement"/>
+        <ant dir="LeeDistance"/>
+        <ant dir="Matrix"/>
+    </target>
+
+    <target name="clean">
+        <ant dir="FinancialStatement" target="clean"/>
+        <ant dir="LeeDistance" target="clean"/>
+        <ant dir="Matrix" target="clean"/>
+    </target>
+
+    <target name="jar">
+        <ant dir="FinancialStatement" target="jar"/>
+        <ant dir="LeeDistance" target="jar"/>
+        <ant dir="Matrix" target="jar"/>
+    </target>
+
+</project>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="ProgCont" default="all">
+
+    <target name="all">
+        <ant dir="EuclideanDistance"/>
+        <ant dir="FilterData"/>
+    </target>
+
+    <target name="clean">
+        <ant dir="EuclideanDistance" target="clean"/>
+        <ant dir="FilterData" target="clean"/>
+    </target>
+
+    <target name="jar">
+        <ant dir="EuclideanDistance" target="jar"/>
+        <ant dir="FilterData" target="jar"/>
+    </target>
+
+</project>

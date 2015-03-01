@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="Matrix2" default="compile">
+
+    <property name="src.dir" location="src"/>
+    <property name="build.dir" location="build"/>
+
+    <target name="init">
+        <mkdir dir="${build.dir}"/>
+        <mkdir dir="${build.dir}/classes"/>
+    </target>
+
+    <target name="compile" depends="init">
+        <javac srcdir="${src.dir}" destdir="${build.dir}/classes"
+               includeantruntime="false"/>
+    </target>
+
+    <target name="run" depends="compile">
+        <java classname="Matrix" classpath="${build.dir}/classes"/>
+    </target>
+
+    <target name="clean">
+        <delete dir="${build.dir}"/>
+    </target>
+
+    <target name="jar" depends="compile">
+        <jar destfile="${build.dir}/${ant.project.name}.jar"
+             basedir="${build.dir}/classes">
+            <manifest>
+                <attribute name="Main-Class" value="Matrix"/>
+            </manifest>
+        </jar>
+    </target>
+
+</project>

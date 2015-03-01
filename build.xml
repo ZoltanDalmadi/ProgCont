@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="ProgCont" default="all">
+
+    <target name="all">
+        <ant dir="ZH1"/>
+        <ant dir="ZH2"/>
+        <ant dir="ZH3"/>
+        <ant dir="ZH4"/>
+        <ant dir="ZH5"/>
+    </target>
+
+    <target name="clean">
+        <ant dir="ZH1" target="clean"/>
+        <ant dir="ZH2" target="clean"/>
+        <ant dir="ZH3" target="clean"/>
+        <ant dir="ZH4" target="clean"/>
+        <ant dir="ZH5" target="clean"/>
+    </target>
+
+    <target name="jar">
+        <ant dir="ZH1" target="jar"/>
+        <ant dir="ZH2" target="jar"/>
+        <ant dir="ZH3" target="jar"/>
+        <ant dir="ZH4" target="jar"/>
+        <ant dir="ZH5" target="jar"/>
+    </target>
+
+</project>

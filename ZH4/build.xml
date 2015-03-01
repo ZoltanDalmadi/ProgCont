@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="ProgCont" default="all">
+
+    <target name="all">
+        <ant dir="LongestLine"/>
+        <ant dir="ManhattanDistance"/>
+        <ant dir="Matrix"/>
+    </target>
+
+    <target name="clean">
+        <ant dir="LongestLine" target="clean"/>
+        <ant dir="ManhattanDistance" target="clean"/>
+        <ant dir="Matrix" target="clean"/>
+    </target>
+
+    <target name="jar">
+        <ant dir="LongestLine" target="jar"/>
+        <ant dir="ManhattanDistance" target="jar"/>
+        <ant dir="Matrix" target="jar"/>
+    </target>
+
+</project>
