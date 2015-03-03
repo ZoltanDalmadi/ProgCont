@@ -5,18 +5,21 @@
         <ant dir="DigitProblem"/>
         <ant dir="EntropyValue"/>
         <ant dir="LongestSortedSubList"/>
+        <ant dir="Parentheses"/>
     </target>
 
     <target name="clean">
         <ant dir="DigitProblem" target="clean"/>
         <ant dir="EntropyValue" target="clean"/>
         <ant dir="LongestSortedSubList" target="clean"/>
+        <ant dir="Parentheses" target="clean"/>
     </target>
 
     <target name="jar">
         <ant dir="DigitProblem" target="jar"/>
         <ant dir="EntropyValue" target="jar"/>
         <ant dir="LongestSortedSubList" target="jar"/>
+        <ant dir="Parentheses" target="jar"/>
     </target>
 
 </project>
