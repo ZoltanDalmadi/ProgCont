@@ -1,23 +1,13 @@
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Scanner;
 import java.util.Stack;
 
 public class Parentheses {
 
   public static void main(String[] args) {
-    Scanner s = new Scanner(System.in);
-
-    List<String> cases = new ArrayList<>();
-
-    while (s.hasNextLine()) {
-      cases.add(s.nextLine());
-    }
-
-    s.close();
-
-    for (String ex : cases) {
-      System.out.println(isBalanced(ex) ? "HELYES" : "HELYTELEN");
+    try (Scanner s = new Scanner(System.in)) {
+      while (s.hasNextLine()) {
+        System.out.println(isBalanced(s.nextLine()) ? "HELYES" : "HELYTELEN");
+      }
     }
   }
 
