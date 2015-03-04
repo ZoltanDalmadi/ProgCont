@@ -22,19 +22,19 @@
         <delete dir="${build.dir}"/>
     </target>
 
-    <target name="1">
+    <target name="A">
         <antcall target="run">
             <param name="name" value="Hamming"/>
         </antcall>
     </target>
 
-    <target name="2">
+    <target name="B">
         <antcall target="run">
             <param name="name" value="Matrix"/>
         </antcall>
     </target>
 
-    <target name="3">
+    <target name="C">
         <antcall target="run">
             <param name="name" value="LineWordChar"/>
         </antcall>
