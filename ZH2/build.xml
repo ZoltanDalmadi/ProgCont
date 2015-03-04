@@ -1,22 +1,43 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project name="ProgCont" default="all">
+<project name="ZH2" default="compile">
 
-    <target name="all">
-        <ant dir="FinancialStatement"/>
-        <ant dir="LeeDistance"/>
-        <ant dir="Matrix"/>
+    <property name="src.dir" location="src"/>
+    <property name="build.dir" location="build"/>
+
+    <target name="init">
+        <mkdir dir="${build.dir}"/>
+        <mkdir dir="${build.dir}/classes"/>
+    </target>
+
+    <target name="compile" depends="init">
+        <javac srcdir="${src.dir}" destdir="${build.dir}/classes"
+               includeantruntime="false"/>
+    </target>
+
+    <target name="run" depends="compile">
+        <java classname="${name}" classpath="${build.dir}/classes"/>
     </target>
 
     <target name="clean">
-        <ant dir="FinancialStatement" target="clean"/>
-        <ant dir="LeeDistance" target="clean"/>
-        <ant dir="Matrix" target="clean"/>
+        <delete dir="${build.dir}"/>
     </target>
 
-    <target name="jar">
-        <ant dir="FinancialStatement" target="jar"/>
-        <ant dir="LeeDistance" target="jar"/>
-        <ant dir="Matrix" target="jar"/>
+    <target name="1">
+        <antcall target="run">
+            <param name="name" value="LeeDistance"/>
+        </antcall>
+    </target>
+
+    <target name="2">
+        <antcall target="run">
+            <param name="name" value="Matrix"/>
+        </antcall>
+    </target>
+
+    <target name="3">
+        <antcall target="run">
+            <param name="name" value="FinancialStatement"/>
+        </antcall>
     </target>
 
 </project>

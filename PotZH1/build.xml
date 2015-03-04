@@ -1,25 +1,49 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project name="PotZH1" default="all">
+<project name="PotZH1" default="compile">
 
-    <target name="all">
-        <ant dir="DigitProblem"/>
-        <ant dir="EntropyValue"/>
-        <ant dir="LongestSortedSubList"/>
-        <ant dir="Parentheses"/>
+    <property name="src.dir" location="src"/>
+    <property name="build.dir" location="build"/>
+
+    <target name="init">
+        <mkdir dir="${build.dir}"/>
+        <mkdir dir="${build.dir}/classes"/>
+    </target>
+
+    <target name="compile" depends="init">
+        <javac srcdir="${src.dir}" destdir="${build.dir}/classes"
+               includeantruntime="false"/>
+    </target>
+
+    <target name="run" depends="compile">
+        <java classname="${name}" classpath="${build.dir}/classes"/>
     </target>
 
     <target name="clean">
-        <ant dir="DigitProblem" target="clean"/>
-        <ant dir="EntropyValue" target="clean"/>
-        <ant dir="LongestSortedSubList" target="clean"/>
-        <ant dir="Parentheses" target="clean"/>
+        <delete dir="${build.dir}"/>
     </target>
 
-    <target name="jar">
-        <ant dir="DigitProblem" target="jar"/>
-        <ant dir="EntropyValue" target="jar"/>
-        <ant dir="LongestSortedSubList" target="jar"/>
-        <ant dir="Parentheses" target="jar"/>
+    <target name="1">
+        <antcall target="run">
+            <param name="name" value="EntropyValue"/>
+        </antcall>
+    </target>
+
+    <target name="2">
+        <antcall target="run">
+            <param name="name" value="LongestSortedSubList"/>
+        </antcall>
+    </target>
+
+    <target name="3">
+        <antcall target="run">
+            <param name="name" value="DigitProblem"/>
+        </antcall>
+    </target>
+
+    <target name="4">
+        <antcall target="run">
+            <param name="name" value="Parentheses"/>
+        </antcall>
     </target>
 
 </project>

@@ -1,19 +1,43 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project name="ProgCont" default="all">
+<project name="ZH5" default="compile">
 
-    <target name="all">
-        <ant dir="EuclideanDistance"/>
-        <ant dir="FilterData"/>
+    <property name="src.dir" location="src"/>
+    <property name="build.dir" location="build"/>
+
+    <target name="init">
+        <mkdir dir="${build.dir}"/>
+        <mkdir dir="${build.dir}/classes"/>
+    </target>
+
+    <target name="compile" depends="init">
+        <javac srcdir="${src.dir}" destdir="${build.dir}/classes"
+               includeantruntime="false"/>
+    </target>
+
+    <target name="run" depends="compile">
+        <java classname="${name}" classpath="${build.dir}/classes"/>
     </target>
 
     <target name="clean">
-        <ant dir="EuclideanDistance" target="clean"/>
-        <ant dir="FilterData" target="clean"/>
+        <delete dir="${build.dir}"/>
     </target>
 
-    <target name="jar">
-        <ant dir="EuclideanDistance" target="jar"/>
-        <ant dir="FilterData" target="jar"/>
+    <target name="1">
+        <antcall target="run">
+            <param name="name" value="EuclideanDistance"/>
+        </antcall>
+    </target>
+
+    <target name="2">
+        <antcall target="run">
+            <param name="name" value="Matrix"/>
+        </antcall>
+    </target>
+
+    <target name="3">
+        <antcall target="run">
+            <param name="name" value="FilterData"/>
+        </antcall>
     </target>
 
 </project>

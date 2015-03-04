@@ -19,13 +19,4 @@
         <ant dir="ZH5" target="clean"/>
     </target>
 
-    <target name="jar">
-        <ant dir="PotZH1" target="jar"/>
-        <ant dir="ZH1" target="jar"/>
-        <ant dir="ZH2" target="jar"/>
-        <ant dir="ZH3" target="jar"/>
-        <ant dir="ZH4" target="jar"/>
-        <ant dir="ZH5" target="jar"/>
-    </target>
-
 </project>
