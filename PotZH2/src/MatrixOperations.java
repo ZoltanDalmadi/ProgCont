@@ -59,6 +59,8 @@ public class MatrixOperations {
           }
         }
 
+        s.nextLine();
+
         Matrix transposed = mat.transpose();
         Matrix AAT = mat.multiply(transposed);
 
@@ -71,10 +73,7 @@ public class MatrixOperations {
         }
 
         System.out.println(sj);
-
-        s.nextLine();
       }
-
     }
   }
 
