@@ -28,4 +28,10 @@
         </antcall>
     </target>
 
+    <target name="B">
+        <antcall target="run">
+            <param name="name" value="SpecialRotate"/>
+        </antcall>
+    </target>
+
 </project>
