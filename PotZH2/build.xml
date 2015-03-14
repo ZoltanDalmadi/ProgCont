@@ -40,4 +40,10 @@
         </antcall>
     </target>
 
+    <target name="D">
+        <antcall target="run">
+            <param name="name" value="DateDifferences"/>
+        </antcall>
+    </target>
+
 </project>
