@@ -34,4 +34,10 @@
         </antcall>
     </target>
 
+    <target name="C">
+        <antcall target="run">
+            <param name="name" value="ArmstrongNumbers"/>
+        </antcall>
+    </target>
+
 </project>
