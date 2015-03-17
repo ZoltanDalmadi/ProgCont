@@ -3,32 +3,31 @@ import java.util.Scanner;
 public class LeeDistance {
 
   public static void main(String[] args) {
-    Scanner s = new Scanner(System.in);
+    try (Scanner s = new Scanner(System.in)) {
 
-    int Q = s.nextInt();
-    int N = s.nextInt();
+      int Q = s.nextInt();
+      int N = s.nextInt();
 
-    String[] dic = new String[N];
+      String[] dic = new String[N];
 
-    for (int i = 0; i < N; i++) {
-      dic[i] = s.next();
-    }
+      for (int i = 0; i < N; i++) {
+        dic[i] = s.next();
+      }
 
-    s.close();
+      int minLee = getLeeDistance(dic[0], dic[1], Q);
 
-    int minLee = getLeeDistance(dic[0], dic[1], Q);
+      for (int i = 0; i < N; i++) {
+        for (int j = i + 1; j < N; j++) {
+          int ml = getLeeDistance(dic[i], dic[j], Q);
 
-    for (int i = 0; i < N; i++) {
-      for (int j = i + 1; j < N; j++) {
-        int ml = getLeeDistance(dic[i], dic[j], Q);
-
-        if (ml < minLee) {
-          minLee = ml;
+          if (ml < minLee) {
+            minLee = ml;
+          }
         }
       }
-    }
 
-    System.out.println(minLee);
+      System.out.println(minLee);
+    }
 
   }
 
