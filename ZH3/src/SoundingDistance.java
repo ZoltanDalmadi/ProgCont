@@ -3,31 +3,30 @@ import java.util.Scanner;
 public class SoundingDistance {
 
   public static void main(String[] args) {
-    Scanner s = new Scanner(System.in);
+    try (Scanner s = new Scanner(System.in)) {
 
-    int numOfWords = s.nextInt();
+      int numOfWords = s.nextInt();
 
-    String[] dic = new String[numOfWords];
+      String[] dic = new String[numOfWords];
 
-    for (int i = 0; i < numOfWords; i++) {
-      dic[i] = s.next();
-    }
+      for (int i = 0; i < numOfWords; i++) {
+        dic[i] = s.next();
+      }
 
-    s.close();
+      int maxSoundingDistance = getSoundingDistance(dic[0], dic[1]);
 
-    int maxSoundingDistance = getSoundingDistance(dic[0], dic[1]);
+      for (int i = 0; i < numOfWords; i++) {
+        for (int j = i + 1; j < numOfWords; j++) {
+          int sd = getSoundingDistance(dic[i], dic[j]);
 
-    for (int i = 0; i < numOfWords; i++) {
-      for (int j = i + 1; j < numOfWords; j++) {
-        int sd = getSoundingDistance(dic[i], dic[j]);
-
-        if (sd > maxSoundingDistance) {
-          maxSoundingDistance = sd;
+          if (sd > maxSoundingDistance) {
+            maxSoundingDistance = sd;
+          }
         }
       }
-    }
 
-    System.out.println(maxSoundingDistance);
+      System.out.println(maxSoundingDistance);
+    }
 
   }
 
