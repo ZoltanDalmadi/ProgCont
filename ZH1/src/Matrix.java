@@ -1,4 +1,5 @@
 import java.util.Scanner;
+import java.util.StringJoiner;
 
 public class Matrix {
 
@@ -29,18 +30,18 @@ public class Matrix {
       averages[i] /= (double) N;
     }
 
-    StringBuilder sb = new StringBuilder();
+    StringJoiner sj = new StringJoiner(" ");
 
     for (int col = 0; col < M; col++) {
       for (int row = 0; row < N; row++) {
         if (mat[row][col] == averages[col]) {
-          sb.append(col + 1).append(" ");
+          sj.add(String.valueOf(col + 1));
           break;
         }
       }
     }
 
-    System.out.println(sb.toString().trim());
+    System.out.println(sj);
   }
 
 }
