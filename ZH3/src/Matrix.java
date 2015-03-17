@@ -1,4 +1,5 @@
 import java.util.Scanner;
+import java.util.StringJoiner;
 
 public class Matrix {
 
@@ -28,15 +29,15 @@ public class Matrix {
         }
       }
 
-      StringBuilder sb = new StringBuilder();
+      StringJoiner sj = new StringJoiner(" ");
 
       for (int i = 0; i < M; i++) {
         if (positives[i] > negatives[i]) {
-          sb.append(i + 1).append(" ");
+          sj.add(String.valueOf(i + 1));
         }
       }
 
-      System.out.println(sb.toString().trim());
+      System.out.println(sj);
     }
   }
 
